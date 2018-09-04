@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # sample-app
 
 This is a sample Grommet application for reference.
@@ -39,3 +40,6 @@ To run this application, execute the following commands:
     ```
     $ npm test
     ```
+=======
+# HPE-Integrations
+>>>>>>> 169904aebf1bef2f6950ac3740a56591d343ed10
