@@ -1,6 +1,6 @@
 import { announcePageLoaded } from 'grommet/utils/Announcer';
 
-const DEFAULT_TITLE = 'Sample App';
+const DEFAULT_TITLE = 'HPE Integrations';
 
 export function pageLoaded(title) {
   if (document) {

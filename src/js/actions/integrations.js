@@ -1,24 +1,47 @@
-import { INTEGRATIONS_LOAD, INTEGRATIONS_UNLOAD, INTEGRATION_LOAD, INTEGRATION_UNLOAD } from '../actions';
+import { INTEGRATIONS_LOAD, INTEGRATIONS_SUCCESS_LOAD, INTEGRATIONS_UNLOAD, INTEGRATION_LOAD, INTEGRATION_UNLOAD } from '../actions';
 import {
   watchTasks, unwatchTasks, watchTask, unwatchTask
 } from '../api/tasks';
 
 export function loadIntegrations() {
-  return dispatch => (
-    watchTasks()
-      .on('success',
-        payload => dispatch({ type: INTEGRATIONS_LOAD, payload })
-      )
-      .on('error',
-        payload => dispatch({ type: INTEGRATIONS_LOAD, error: true, payload })
-      )
-      .start()
-  );
+  console.log("actions/settings");
+
+  let integrations = {integration1: "21"};
+  // Temp code
+  return {
+    type: INTEGRATIONS_LOAD,
+    integrations: integrations
+  };
+
+
+  // return dispatch => {
+  //
+  //   let uri = "/rest/integrations"
+  //   let reqBody = {};
+  //
+  //   postRESTApi(uri, reqBody)
+  //     .then(function(response) {
+  //       console.log("response: ", response);
+  //     }).then(function(result){
+  //     console.log(result);
+  //     dispatch(loadIntegrations_Success(result));
+  //   }).catch(function(ex){
+  //     console.log("Exception: ", ex);
+  //   });
+  //
+  // };
 }
 
 export function unloadIntegrations() {
   unwatchTasks();
   return { type: INTEGRATIONS_UNLOAD };
+}
+
+export function loadIntegrations_Success(integrations) {
+  return {
+    type: INTEGRATIONS_SUCCESS_LOAD,
+    integrations: integrations
+  };
 }
 
 export function loadIntegration(id) {

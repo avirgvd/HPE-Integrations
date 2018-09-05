@@ -14,6 +14,7 @@ import Tasks from '../screens/Tasks';
 import Task from '../screens/Task';
 import Integrations from '../screens/Integrations';
 import Integration from '../screens/Integration';
+import Settings from '../screens/Settings';
 import NotFound from '../screens/NotFound';
 
 class Main extends Component {
@@ -54,6 +55,7 @@ class Main extends Component {
               <Route path='/integrations/:id' component={Integration} />
               <Route path='/tasks' component={Tasks} />
               <Route path='/integrations' component={Integrations} />
+              <Route path='/settings' component={Settings} />
               <Route path='/*' component={NotFound} />
             </Switch>
           </Split>

@@ -3,6 +3,7 @@
 import {
   NAV_ACTIVATE, NAV_ENABLE, NAV_RESPONSIVE
 } from '../actions';
+import Immutable from 'immutable';
 
 import { createReducer } from './utils';
 
@@ -12,7 +13,8 @@ const initialState = {
   responsive: 'multiple',
   items: [
     { path: '/dashboard', label: 'Dashboard' },
-    { path: '/integrations', label: 'Integrations'}
+    { path: '/integrations', label: 'Integrations'},
+    { path: '/settings', label: 'Settings'}
   ]
 };
 
