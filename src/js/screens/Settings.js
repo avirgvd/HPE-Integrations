@@ -43,9 +43,9 @@ class Settings extends Component {
 
     let settings_temp = {availableIntegrations:
       [
-        {serviceName: "Nagios", version: "v1.0.0"},
-        {serviceName: "ServiceNow Incident Management", version: "v1.1.0"},
-        {serviceName: "Splunk", version: "v1.2.0"}
+    //     {serviceName: "Nagios", version: "v1.0.0"},
+    //     {serviceName: "ServiceNow Incident Management", version: "v1.1.0"},
+    //     {serviceName: "Splunk", version: "v1.2.0"}
       ]
     };
 

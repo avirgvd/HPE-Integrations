@@ -1,21 +1,17 @@
 import express from 'express';
 import { addSession, getTasks, getTask } from './data';
+import settings from './settings';
 
 const router = express.Router();
 
-router.post('/sessions', (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password || email === 'error') {
-    res.statusMessage = 'Invalid email or password';
-    res.status(401).end();
-  } else {
-    const name = email.split('@')[0].replace(/\.|_/, ' '); // simulated
-    const now = new Date();
-    const token = `token-${now.getTime()}`; // simulated
-    const session = { email, name, token };
-    addSession(token, session);
-    res.json(session);
-  }
+router.post('/settings', (req, res) => {
+
+  console.log("API POST /rest/settings: body: ", req.body);
+  let result = settings.getallsettings();
+  console.log("API POST /rest/settings: result: ", result);
+
+  res.json({result: result});
+
 });
 
 router.get('/task', (req, res) => {
