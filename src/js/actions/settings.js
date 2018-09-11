@@ -27,6 +27,7 @@ export function loadSettings() {
     postRESTApi(uri, reqBody)
       .then(function(response) {
         console.log("response: ", response);
+        return response.json()
       }).then(function(result){
       console.log("result: ", result);
       dispatch(loadSettings_Success(result));
